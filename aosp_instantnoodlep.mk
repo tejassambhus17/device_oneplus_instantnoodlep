@@ -22,15 +22,23 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from instantnoodlep device
 $(call inherit-product, device/oneplus/instantnoodlep/device.mk)
 
-# Inherit some common Evolution X stuff.
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+# Inherit some common aosp stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
-EVO_BUILD_TYPE := OFFICIAL
+
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+#extras
+IS_PHONE := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+CUSTOM_BUILD_TYPE := UNOFFICIAL
 EXTRA_UDFPS_ANIMATIONS := true
 TARGET_BOOT_ANIMATION_RES := 1440
 TARGET_SUPPORTS_QUICK_TAP := true
 
-PRODUCT_NAME := evolution_instantnoodlep
+PRODUCT_NAME := aosp_instantnoodlep
 PRODUCT_DEVICE := instantnoodlep
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
